@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "telegrinder-alchemy"
+version = "0.1.0"
+description = ""
+authors = [
+    "prostomarkeloff <28061158+prostomarkeloff@users.noreply.github.com>",
+]
+license = "MIT"
+packages = [{ include = "bot" }]
+readme = "readme.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+telegrinder = "^0.3.4"
+sqlalchemy = { version = "^2.0.35", extras = ["asyncio"] }
+pydantic-settings = "^2.5.2"
+aiosqlite = "^0.20.0"
+
+
+[tool.poetry.group.dev.dependencies]
+alembic = "^1.13.3"
+ruff = "^0.6.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
