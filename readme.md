@@ -33,42 +33,42 @@ Heed these words well, for to summon a bot of true power, one must perform the s
 
 ### 1. **Clone the Ancient Repository**
    First, enter the repository’s sanctum with the following incantation:
-   \`\`\`bash
+   ```bash
    git clone https://github.com/prostomarkeloff/telegrinder-alchemy
    cd telegrinder-alchemy
-   \`\`\`
+   ```
 
 ### 2. **Forge the Circle of Protection (Virtual Environment)**
    To protect your project from dependency demons, invoke the virtual environment spell:
-   \`\`\`bash
+   ```bash
    python -m venv venv
    source venv/bin/activate  # For Windows: venv\\Scripts\\activate
-   \`\`\`
+   ```
 
 ### 3. **Summon the Bard of Dependencies (Poetry)**
    Now call forth Poetry, the bard who sings the song of dependencies:
-   \`\`\`bash
+   ```bash
    pip install poetry
-   \`\`\`
+   ```
 
 ### 4. **Inscribe the Spells (Install Dependencies)**
    Speak the words to complete the installation of your bot’s mystical requirements:
-   \`\`\`bash
+   ```bash
    poetry install
-   \`\`\`
+   ```
 
 ### 5. **Prepare the Scroll of Secrets (.bot-env)**
    Inscribe your scroll with the secret knowledge required to bind your bot to the realms of Telegram:
-   \`\`\`
-   DATABASE_URL=your_database_url_here
-   TELEGRAM_API_KEY=your_telegram_api_key_here
-   \`\`\`
+   ```
+   DB_URL=your_database_url_here
+   BOT_TOKEN=your_telegram_api_key_here
+   ```
 
 ### 6. **Awaken the Beast (Run the Bot)**
    At last, utter the final invocation to breathe life into your bot:
-   \`\`\`bash
+   ```bash
    python bot
-   \`\`\`
+   ```
 
 _And lo! The bot shall spring to life, ready to heed your commands, and to journey forth into the wide world of Telegram._
 
