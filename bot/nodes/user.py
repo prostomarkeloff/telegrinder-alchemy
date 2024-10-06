@@ -4,7 +4,7 @@ from bot.db.user import User
 from sqlalchemy import select
 
 
-class DBUser(ScalarNode, User):
+class DBUser(ScalarNode, User):  # type: ignore
     @classmethod
     async def compose(cls, user_src: UserSource, session: DBSession) -> User:
         result = (
