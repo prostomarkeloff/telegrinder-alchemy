@@ -1,5 +1,6 @@
 from bot.db import ModelBase
-from sqlalchemy.orm import Mapped, mapped_column
+from bot.db.post import Post
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 
 class User(ModelBase):
@@ -7,3 +8,4 @@ class User(ModelBase):
 
     id: Mapped[int] = mapped_column(primary_key=True)
     tg_id: Mapped[int]
+    posts: Mapped[list["Post"]] = relationship()

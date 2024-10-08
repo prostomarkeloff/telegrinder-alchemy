@@ -1,111 +1,109 @@
+Here is a rewritten version of the README with Docker and PostgreSQL already included:
+
+---
+
 # 🐉📜 **Telegrinder-Alchemy: The Tome of Botmastery** 📜🐉
 
-_Hear ye! Gather ‘round, o brave coders, wizards of syntax, and summoners of scripts! Welcome to the hallowed grounds of **Telegrinder-Alchemy**, the ancient repository where mortal hands craft **Telegram bots** of unimaginable power! With the wisdom of Telegrinder and the arcane might of SQLAlchemy, this sacred tome shall guide thee in creating bots that bend the digital realms to thy will._
-
-Beware, traveler, for this work is not yet fully inscribed! ⚔️ Though the foundations of migrations are already set, more powerful spells—PostgreSQL and Docker—shall soon be unlocked to further strengthen your creations.
+_Welcome, fearless coders and digital sorcerers, to **Telegrinder-Alchemy**, the repository that empowers you to create mighty **Telegram bots**! With the combined strength of Telegrinder and SQLAlchemy, this guide will help you craft bots that harness the full potential of PostgreSQL and Docker._
 
 ---
 
-## 🧙 **The Sacred Powers Contained Within**
+## 🧙 **The Tools of Creation**
 
-_Step boldly, for here you shall find the tools of bot-crafting beyond your wildest imaginings:_
+Prepare yourself for a journey through the realms of bot development with these powerful tools at your command:
 
-- **Telegrinder Framework: The Lightning Blade** ⚡️
-  A swift and deadly framework, Telegrinder gives you the power to wield Telegram bots as effortlessly as a sword in the hands of a master swordsman. It cuts through the complexity of bot creation with a single stroke.
+- **Telegrinder Framework: The Swift Blade** ⚡️
+  An intuitive framework that makes Telegram bot development fast and seamless. Wield it like a master, simplifying your bot-building journey.
 
-- **SQLAlchemy: The Philosopher's Stone of Data** 🏺
-  Transform mere data into golden interactions with SQLAlchemy, the ORM that binds the material realm of databases to the ethereal workings of your bot. With it, your bot shall command its own data with divine precision.
+- **SQLAlchemy: The Architect of Data** 🏺
+  Manage your bot's data effortlessly with SQLAlchemy, a robust ORM that bridges your bot and its database with precision.
 
-- **Pre-configured Migrations: The Scroll of Evolution** 📜
-  Fear not the chaos of changing tables and schemas! Migrations have been set in place by the ancients, ensuring that your bot may evolve and adapt without risking the collapse of your sacred database structures.
+- **Migrations: The Scroll of Evolution** 📜
+  Pre-configured migrations ensure that your database evolves with your bot without risking the integrity of your data structures.
 
-- **PostgreSQL Support: The Rising Titan (Coming Soon)** 🏛️
-  Soon, the legendary PostgreSQL shall rise from the depths, a towering behemoth of scalability, bringing with it the power to handle vast legions of data with ease.
+- **PostgreSQL: The Database Colossus** 🏛️
+  A powerful and scalable database that allows your bot to manage vast amounts of data with ease. PostgreSQL is fully integrated to ensure smooth operation.
 
-- **Docker Integration: The Eternal Vessel (Coming Soon)** 🐳
-  What is a bot without a vessel to contain it? Docker shall soon arrive, an enchanted ship to carry your bot across seas of servers and lands of environments, so it may live forevermore, no matter the terrain!
+- **Docker: The Eternal Vessel** 🐳
+  Docker containers make deployment across environments easy, providing your bot with a portable and consistent runtime, no matter the server or platform.
 
 ---
 
-## ⚔️ **Ritual of Summoning: How to Awaken Thy Bot**
+## ⚔️ **How to Summon Your Bot**
 
-Heed these words well, for to summon a bot of true power, one must perform the sacred rites with care:
+Follow these steps carefully to bring your bot to life:
 
-### 1. **Clone the Ancient Repository**
-   First, enter the repository’s sanctum with the following incantation:
+### 1. **Clone the Repository**
+   Begin by cloning the repository to your local machine:
    ```bash
    git clone https://github.com/prostomarkeloff/telegrinder-alchemy
    cd telegrinder-alchemy
    ```
 
-### 2. **Forge the Circle of Protection (Virtual Environment)**
-   To protect your project from dependency demons, invoke the virtual environment spell:
+### 2. **Create a Virtual Environment**
+   Protect your project from dependency conflicts by creating a virtual environment:
    ```bash
    python -m venv venv
    source venv/bin/activate  # For Windows: venv\\Scripts\\activate
    ```
 
-### 3. **Summon the Bard of Dependencies (Poetry)**
-   Now call forth Poetry, the bard who sings the song of dependencies:
+### 3. **Install Poetry for Dependency Management**
+   Use Poetry to handle dependencies efficiently:
    ```bash
    pip install poetry
    ```
 
-### 4. **Inscribe the Spells (Install Dependencies)**
-   Speak the words to complete the installation of your bot’s mystical requirements:
+### 4. **Install Project Dependencies**
+   Install all the required dependencies with:
    ```bash
    poetry install
    ```
 
-### 5. **Prepare the Scroll of Secrets (.bot-env)**
-   Inscribe your scroll with the secret knowledge required to bind your bot to the realms of Telegram:
+### 5. **Configure Your Environment**
+   Set up the necessary environment variables in a `.bot-env-dev` and `.bot-env-prod` files. Here’s an example:
    ```
-   DB_URL=your_database_url_here
-   BOT_TOKEN=your_telegram_api_key_here
-   ```
-
-### 6. **Awaken the Beast (Run the Bot)**
-   At last, utter the final invocation to breathe life into your bot:
-   ```bash
-   python bot
+   BOT_TOKEN=token
+   DB_URL=postgresql+asyncpg://admin:admin@localhost:5432/bot
+   POSTGRES_DATA_PATH=./postgres-data
+   POSTGRES_USER=admin
+   POSTGRES_PASSWORD=admin
+   POSTGRES_DB=bot
    ```
 
-_And lo! The bot shall spring to life, ready to heed your commands, and to journey forth into the wide world of Telegram._
+### 6. **Run you bot**
+
+  Telegrinder-alchemy lets you use already prewritten scripts, to run your bot locally and get into production.
+  All of them do use docker and compose, so have it in mind getting errors.
+  Let's run our bot!
+  ```sh
+  bash scripts/dev-run.sh
+  ```
+
+_Your bot is now alive and ready to serve!_
 
 ---
 
-## 🌌 **The Path Ahead: What Lies Beyond the Horizon**
+## 🌌 **The Path Ahead**
 
-Though your bot is powerful, even greater magics are yet to be revealed. Brave coder, the future holds vast potential:
-
-- **PostgreSQL: The Database Colossus** 🏔️
-   Soon you shall wield PostgreSQL, a database of immense strength, capable of handling kingdoms of data without faltering. With it, your bot shall stand unshaken, no matter how vast its empire of users grows.
-
-- **Docker: The Spell of Immortality** 💀⚡
-   Docker shall grant your bot the power to transcend its earthly limitations, placing it within a container—a perfect vessel that allows it to exist anywhere and everywhere. With Docker, your bot shall never perish, no matter what land it sails to.
-
-- **More Spells from Telegrinder’s Grimoire** 🧙‍♂️
-   As the repository grows, new spells shall be written into the tome, granting you ever-greater control over the Telegram realms. Prepare yourself for even more advanced bot capabilities that will empower you to perform feats of coding sorcery.
+While your bot is now functional, the road to mastery continues. Consider expanding your bot’s capabilities by exploring advanced features of Telegrinder and fine-tuning your PostgreSQL database for optimal performance. Docker will allow you to scale and deploy your bot seamlessly.
 
 ---
 
-## 🏰 **Join the Order of Code-Wizards**
+## 🏰 **Join the Community**
 
-Are you a wizard of great cunning and wisdom? Do you seek to contribute to the legacy of **Telegrinder-Alchemy**? Then step forth and make your mark! Fork the repository, open issues, or submit pull requests, and together we shall forge a repository of unparalleled might!
-
-Let your ideas flow like the river Styx, bringing life to new spells, features, and optimizations. The realm of Telegram awaits the work of your hands!
+Want to contribute to **Telegrinder-Alchemy**? Fork the repository, submit issues, or create pull requests. Together, we can build something extraordinary!
 
 ---
 
-## 🧙‍♀️ **Final Words of the Oracle**
+## 🧙‍♀️ **Final Words**
 
-Go now, brave developer, for the time has come. Armed with the knowledge of **Telegrinder-Alchemy**, your bot shall rise among the pantheon of great Telegram creations. Whether it is a simple messenger or a digital dragon of vast complexity, **Telegrinder-Alchemy** will guide you to greatness.
+Armed with the knowledge of **Telegrinder-Alchemy**, go forth and build bots of incredible power. Whether your creation is simple or complex, this guide will serve you well.
 
-**May your code be clean, your databases strong, and your bots mighty!**
+**Happy coding, and may your bots be ever powerful!**
 
 ---
 
-### ✍️ *By the hand of*:
+### ✍️ *By*:
 - **Author**: prostomarkeloff
 - **License**: MIT
 

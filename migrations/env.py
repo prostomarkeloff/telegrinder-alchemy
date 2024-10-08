@@ -6,6 +6,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from alembic import context
+from bot.settings import SETTINGS
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -19,6 +20,8 @@ if config.config_file_name is not None:
 
 from bot.db import ModelBase
 target_metadata = ModelBase.metadata
+
+config.set_main_option('sqlalchemy.url', SETTINGS.DB_URL)
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

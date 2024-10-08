@@ -3,8 +3,10 @@ db.sqlite3*
 sqlite.db
 compose-postgres
 tz/
-.bot-env
+.bot-env-prod
 poetry.lock
+.bot-env-dev
+postgres-data
 
 .DS_Store
 # Byte-compiled / optimized / DLL files

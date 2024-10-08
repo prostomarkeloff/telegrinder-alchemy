@@ -1,0 +1,6 @@
+BOT_TOKEN=token
+DB_URL=postgresql+asyncpg://admin:admin@db:5432/bot
+POSTGRES_DATA_PATH=./postgres-data
+POSTGRES_USER=admin
+POSTGRES_PASSWORD=admin
+POSTGRES_DB=bot

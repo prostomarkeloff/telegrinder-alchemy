@@ -7,8 +7,10 @@ class ModelBase(_DBase, AsyncAttrs):
 
 
 from bot.db.user import User
+from bot.db.post import Post
 
 __all__ = (
     "ModelBase",
     "User",
+    "Post",
 )
