@@ -1,5 +1,3 @@
-Here is a rewritten version of the README with Docker and PostgreSQL already included:
-
 ---
 
 # 🐉📜 **Telegrinder-Alchemy: The Tome of Botmastery** 📜🐉
