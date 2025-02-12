@@ -10,14 +10,11 @@ packages = [{ include = "bot" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"
-telegrinder = "^0.3.4"
+telegrinder = {git = "https://github.com/timoniq/telegrinder@28d134d"}
 sqlalchemy = { version = "^2.0.35", extras = ["asyncio"] }
 aiosqlite = "^0.20.0"
-betterconf = "^4.0.0"
-python-dotenv = "^1.0.1"
+betterconf = "^4.5.0"
 alembic = "^1.13.3"
-psycopg = { version = "^3.2.3", extras = ["binary"] }
-
 
 [tool.poetry.group.dev.dependencies]
 alembic = "^1.13.3"

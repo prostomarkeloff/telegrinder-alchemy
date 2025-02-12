@@ -1,10 +1,10 @@
 from bot.nodes.db import DBSession
-from telegrinder.node import ScalarNode, UserSource
+from telegrinder.node import scalar_node, UserSource
 from bot.db.user import User
 from sqlalchemy import select
 
-
-class DBUser(ScalarNode, User):  # type: ignore
+@scalar_node()
+class DBUser:  # type: ignore
     @classmethod
     async def compose(cls, user_src: UserSource, session: DBSession) -> User:
         result = (
