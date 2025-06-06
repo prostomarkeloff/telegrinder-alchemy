@@ -18,7 +18,7 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 
-from bot.db import ModelBase
+from bot.db.base import ModelBase
 target_metadata = ModelBase.metadata
 
 config.set_main_option('sqlalchemy.url', SETTINGS.DB_URL)

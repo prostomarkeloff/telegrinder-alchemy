@@ -1,25 +1,22 @@
-[tool.poetry]
+[project]
 name = "telegrinder-alchemy"
 version = "0.1.0"
-description = ""
-authors = [
-    "prostomarkeloff <28061158+prostomarkeloff@users.noreply.github.com>",
+description = "Add your description here"
+readme = "readme.md"
+requires-python = ">=3.12"
+dependencies = [
+    "alembic>=1.16.1",
+    "betterconf>=4.5.0",
+    "psycopg[binary,pool]>=3.2.9",
+    "ruff>=0.11.13",
+    "sqlalchemy[asyncio]>=2.0.41",
+    "telegrinder",
 ]
-license = "MIT"
-packages = [{ include = "bot" }]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-telegrinder = {git = "https://github.com/timoniq/telegrinder@28d134d"}
-sqlalchemy = { version = "^2.0.35", extras = ["asyncio"] }
-aiosqlite = "^0.20.0"
-betterconf = "^4.5.0"
-alembic = "^1.13.3"
+[tool.setuptools.packages.find]
+where = ["."] # Look in the current directory
+include = ["bot*"] # Only include things that start with 'bot'
+# exclude = ["migrations*"] # Explicitly exclude 'migrations' if needed
 
-[tool.poetry.group.dev.dependencies]
-alembic = "^1.13.3"
-ruff = "^0.6.8"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv.sources]
+telegrinder = { git = "https://github.com/timoniq/telegrinder", rev = "dev" }

@@ -1,20 +1,19 @@
-from bot.nodes.db import DBSession
+from bot.nodes.db import UOW
 from telegrinder.node import scalar_node, UserSource
-from bot.db.user import User
-from sqlalchemy import select
+from bot.db.models.user import User
 
-@scalar_node()
-class DBUser:  # type: ignore
+
+@scalar_node
+class DBUser:
     @classmethod
-    async def compose(cls, user_src: UserSource, session: DBSession) -> User:
-        result = (
-            await session.execute(select(User).where(User.tg_id == user_src.id))
-        ).scalar()
-        if result:
-            return result
+    async def compose(cls, user_src: UserSource, uow: UOW) -> User:
+        user_id = user_src.id
 
-        user = User(tg_id=user_src.id)
-        session.add(user)
-        await session.commit()
+        if user := await uow.users.get_by_id(user_id):
+            return user
+
+        async with uow:
+            user = User(tg_id=user_id)
+            await uow.users.create(user)
 
         return user
